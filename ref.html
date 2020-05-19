@@ -57,21 +57,6 @@ function reacitve(obj){
     });
     return vueData
 }
-
-function ref(key,value){
-    let dep = new Dep();
-    const that = this;
-    return Object.defineProperty({}, key, {
-        get() {
-            dep.depend();
-            return value;
-        },
-        set(newValue) {
-            value = newValue;
-            dep.notify();
-        }
-    });
-}
  
 function watch(cb){
     if ( typeof cb === "function") {
