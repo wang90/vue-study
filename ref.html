@@ -10,9 +10,6 @@
 let active;
 let vueData ={};
 let str;
-let data = reacitve({
-    count: 0
-});
 
 class Dep {
     constructor() {
@@ -28,16 +25,7 @@ class Dep {
         this.deps.forEach(dep => {dep()});
     }
 }
-
-document.getElementById("add").addEventListener("click", function() {
-    data.count++;
-});
-
-watch(() => {
-    str = `点击了 ${data.count} 次`;
-    document.getElementById("app").innerText = str;
-});
-
+    
 function reacitve(obj){
     Object.keys(obj).forEach((key) => {
         if (obj.hasOwnProperty(key)) {
@@ -57,21 +45,6 @@ function reacitve(obj){
     });
     return vueData
 }
-
-function ref(key,value){
-    let dep = new Dep();
-    const that = this;
-    return Object.defineProperty({}, key, {
-        get() {
-            dep.depend();
-            return value;
-        },
-        set(newValue) {
-            value = newValue;
-            dep.notify();
-        }
-    });
-}
  
 function watch(cb){
     if ( typeof cb === "function") {
@@ -80,6 +53,23 @@ function watch(cb){
         active = null;
     }
 }
+    
+    
+    
+// 调用 
+let data = reacitve({
+    count: 0
+});
+
+document.getElementById("add").addEventListener("click", function() {
+    data.count++;
+});
+
+watch(() => {
+    str = `点击了 ${data.count} 次`;
+    document.getElementById("app").innerText = str;
+});
+
 
 </script>
 </html>
