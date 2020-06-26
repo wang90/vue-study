@@ -1,7 +1,7 @@
 # Vue 学习仿写
 
 
-### [*vue版本八皇后](https://github.com/wang90/vue_demo/eight-queens)
+### [*vue版八皇后](https://github.com/wang90/vue_demo/eight-queens)
 ``````
 cd eight-queens
 npm install 
