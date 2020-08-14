@@ -4,7 +4,7 @@
 ### [*vue版八皇后](https://github.com/wang90/vue_demo/tree/master/eight-queens)
 ``````
 cd eight-queens
-npm install 
+npm install
 npm start
 ``````
 

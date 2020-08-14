@@ -1,7 +1,6 @@
 # 响应式原理仿写
 
 `````
-``````
 
 class Dep {
     constructor() {
@@ -46,4 +45,3 @@ function watch(cb){
     }
 }
 ``````
-`````
