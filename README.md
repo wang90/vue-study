@@ -54,4 +54,4 @@ function watch(cb){
     }
 }
 ``````
-### [* vuex demo](https://github.com/wang90/vue_demo/my-vuex)
+### [* vuex demo](https://github.com/wang90/vue_demo/tree/master/my-vuex)
