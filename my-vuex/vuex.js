@@ -1,7 +1,5 @@
 // vuex.js
-
-
-improt {reactive} from "./main";
+improt { reactive } from "./main"; // 利用之前绑定好的reactive
 
 class  Store{
     constructor( options= {}) {
