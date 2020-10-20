@@ -58,10 +58,10 @@
 }
 </style>
 <script>
-const girds = new Array(8).fill(1).map((v, i) => {
-  return new Array(8).fill(1).map((_v, _i) => {
+const girds = new Array(8).fill( 1 ).map(( v, i ) => {
+  return new Array( 8 ).fill( 1 ).map(( _v, _i ) => {
     return {
-      key: `key-${i * 8 + _i}`,
+      key: `key-${ i * 8 + _i }`,
       active: false
     };
   });
@@ -75,40 +75,40 @@ export default {
     };
   },
   methods: {
-    select(rindex, cindex) {
-      if (this.validate(rindex, cindex)) {
-        this.data[rindex][cindex].active = !this.data[rindex][cindex].active;
+    select( rindex, cindex ) {
+      if ( this.validate( rindex, cindex ) ) {
+        this.data[ rindex ][ cindex ].active = !this.data[ rindex ][ cindex ].active;
       } else {
         alert("当前位置不能放置皇后");
       }
     },
-    validate(rindex, cindex) {
+    validate( rindex, cindex ) {
       // 横
-      for (let i = 0; i < this.data[rindex].length; i++) {
-        if (this.data[rindex][i].active) {
+      for ( let i = 0; i < this.data[ rindex ].length; i++ ) {
+        if ( this.data[ rindex ][ i ].active ) {
           return false;
         }
       }
 
       // 竖
-      for (let i = 0; i < this.data.length; i++) {
-        if (this.data[i][cindex].active) {
+      for ( let i = 0; i < this.data.length; i++ ) {
+        if ( this.data[ i ][ cindex ].active ) {
           return false;
         }
       }
 
       // 撇
-      for (let i = 0; i < this.data[0].length; i++) {
+      for ( let i = 0; i < this.data[ 0 ].length; i++ ) {
         let y = rindex + cindex - i;
-        if (y >= 0 && y < this.data.length && this.data[y][i].active) {
+        if (y >= 0 && y < this.data.length && this.data[ y ][ i ].active ) {
           return false;
         }
       }
 
       // 捺
-      for (let i = 0; i < this.data[0].length; i++) {
+      for (let i = 0; i < this.data[ 0 ].length; i++ ) {
         let y = rindex - cindex + i;
-        if (y >= 0 && y < this.data.length && this.data[y][i].active) {
+        if ( y >= 0 && y < this.data.length && this.data[ y ][ i ].active ) {
           return false;
         }
       }
