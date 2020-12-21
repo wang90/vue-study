@@ -4,7 +4,7 @@
 ````
 
 class  Store {
-    constructor( options= {}) {
+    constructor( options= {} ) {
         let { state , mutations } = options;
         this._vm = reactive( state );
         this._mutations = mutations;
@@ -12,7 +12,7 @@ class  Store {
     get state() {
         return this._vm;
     }
-    commit ( type, payload) {
+    commit ( type, payload ) {
         const entry = this._mutations[ type ];
         if ( !entry ) {
             return; 
